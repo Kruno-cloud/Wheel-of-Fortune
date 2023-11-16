@@ -1,0 +1,26 @@
+What is the difference between
+SELECT id AS IDKat, parent.Naziv AS NazivPojma, idKategorija AS idKategorije, Naziv AS Kategorija FROM Kategorije parent JOIN Pojmovi child ON IDKat = idKategorije;
+and
+SELECT poi.Naziv, Kat.Naziv as kategorija FROM Pojmovi poi INNER JOIN Kategorije Kat ON poi.idKategorija = Kat.id;
+ChatGPT
+The two SQL queries you provided are similar in that they both perform joins between the "Pojmovi" and "Kategorije" tables to retrieve data from both tables. However, there are some key differences:
+
+Column Selection:
+
+In the first query (SELECT id AS IDKat, parent.Naziv AS NazivPojma, idKategorija AS idKategorije, Naziv AS Kategorija FROM Kategorije parent JOIN Pojmovi child ON IDKat = idKategorije;), you are selecting specific columns and aliasing them with different names. For example, you are renaming the "id" column from the "Kategorije" table as "IDKat" and the "Naziv" column from the "Kategorije" table as "NazivPojma."
+
+In the second query (SELECT poi.Naziv, Kat.Naziv as kategorija FROM Pojmovi poi INNER JOIN Kategorije Kat ON poi.idKategorija = Kat.id;), you are selecting specific columns without aliasing them. The columns are selected directly from their respective tables.
+
+Join Type:
+
+In the first query, you are using an INNER JOIN to combine the data from both tables. This type of join returns only the rows where there is a matching row in both the "Pojmovi" and "Kategorije" tables based on the condition IDKat = idKategorije.
+
+In the second query, you are also using an INNER JOIN to combine the data. It returns rows where there is a matching row in both tables based on the condition poi.idKategorija = Kat.id.
+
+Column Names:
+
+In the first query, you are explicitly specifying aliases for the selected columns. For example, you are selecting "id" from the "Kategorije" table and aliasing it as "IDKat."
+
+In the second query, you are not aliasing the selected columns, so the column names in the result set will retain their original names.
+
+In summary, the primary difference between the two queries is in how the columns are selected and whether or not they are aliased. Both queries perform inner joins between the "Pojmovi" and "Kategorije" tables to retrieve related data. The choice of which query to use depends on your specific requirements for column naming and the structure of the result set you need.

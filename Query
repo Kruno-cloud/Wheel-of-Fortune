@@ -1,0 +1,2 @@
+SELECT id AS IDKat, parent.Naziv AS NazivPojma, idKategorija AS idKategorije, Naziv AS Kategorija FROM Kategorije parent JOIN Pojmovi child ON IDKat = idKategorije;
+SELECT poi.Naziv, Kat.Naziv as kategorija FROM Pojmovi poi INNER JOIN Kategorije Kat ON poi.idKategorija = Kat.id;
